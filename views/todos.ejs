@@ -13,6 +13,7 @@
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <p><%= el.postBody %></p>
                 <span class='del'> Delete </span>
                 <img src="<%= el.image %>" alt="">
             </li>
@@ -23,6 +24,7 @@
 
     <form action="/todos/createTodo" enctype="multipart/form-data" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="text" placeholder="Body of Post" name='postBody'>
         <input type="submit">
         <input type="file" class="form-control" id="imageUpload" name="file">
     </form>
