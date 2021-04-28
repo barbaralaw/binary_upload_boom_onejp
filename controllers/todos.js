@@ -12,6 +12,7 @@ module.exports = {
         }
     },
     createTodo: async (req, res)=>{
+        console.log("**********" + req.file.filename)
         try{
             await Todo.create({todo: req.body.todoItem,image: '/uploads/' + req.file.filename, completed: false, userId: req.user.id})
             console.log('Todo has been added!')
