@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body> -->
+    <%- include('partials/header') -%>
     <h1>Todos</h1>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <p><%= el.postBody %></p>
                 <span class='del'> Delete </span>
                 <img src="<%= el.image %>" alt="">
             </li>
@@ -23,6 +25,7 @@
 
     <form action="/todos/createTodo" enctype="multipart/form-data" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="text" placeholder="Body of Post" name='postBody'>
         <input type="submit">
         <input type="file" class="form-control" id="imageUpload" name="file">
     </form>
@@ -31,5 +34,3 @@
     <a href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
-</body>
-</html>
