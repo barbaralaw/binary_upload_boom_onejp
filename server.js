@@ -9,6 +9,21 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
+// const morgan = require('morgan')
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
+
+// const host = req.host;
+// const filePath = req.protocol + "://" + host + '/' + req.file.path;
+
+// const storage = multer.diskStorage({
+//   destination: function(req, file, callback) {
+//     callback(null, '/src/my-images');
+//   },
+//   filename: function (req, file, callback) {
+//     callback(null, file.fieldname);
+//   }
+// });
 
 require('dotenv').config({path: './config/.env'})
 
@@ -22,6 +37,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
+// app.use(morgan('dev'))
 // Sessions
 app.use(
     session({
