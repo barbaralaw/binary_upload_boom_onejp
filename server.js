@@ -10,8 +10,8 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 // const morgan = require('morgan')
-const multer = require('multer');
-const upload = multer({dest: 'uploads/'});
+// const multer = require('multer');
+// const upload = multer({dest: 'uploads/'});
 
 // const host = req.host;
 // const filePath = req.protocol + "://" + host + '/' + req.file.path;
