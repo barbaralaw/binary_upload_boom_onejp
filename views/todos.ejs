@@ -9,7 +9,13 @@
 </head>
 <body> -->
     <%- include('partials/header') -%>
-    <h1>Todos</h1>
+    <div>
+        <p><strong>User Name</strong>: <%= user.userName %></p>
+        <p><strong>Email</strong>: <%= user.email %></p>
+        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+    </div>
+
+    <h1>Posts</h1>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
@@ -30,7 +36,7 @@
         <input type="file" class="form-control" id="imageUpload" name="file">
     </form>
 
-    
-    <a href="/logout">Logout</a>
-
+    <div class="row justify-content-center mt-5">
+        <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      </div> 
     <script src="js/main.js"></script>
