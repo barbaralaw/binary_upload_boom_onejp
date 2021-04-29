@@ -8,3 +8,13 @@ h1{
 .not{
     text-decoration: underline;
 }
+header{
+    margin-top: 2%
+}
+h2 {
+    color: black;
+    
+}
+span{
+    color: rgba(37,112,176,255)
+}
