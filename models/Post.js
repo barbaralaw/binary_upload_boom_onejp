@@ -1,18 +1,20 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
-  todo: {
+const PostSchema = new mongoose.Schema({
+  post: {
     type: String,
     required: true,
   },
   postBody:{
     type: String,
     required: true
-  },
-  completed: {
-    type: Boolean,
-    required: true,
-  },
+  }
+  // ,
+  // completed: {
+  //   type: Boolean,
+  //   required: true,
+  // }
+  ,
   userId: {
     type: String,
     required: true
@@ -23,4 +25,4 @@ const TodoSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Post', PostSchema)

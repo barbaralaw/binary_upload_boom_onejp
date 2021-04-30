@@ -8,22 +8,8 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-const todoRoutes = require('./routes/todos')
-// const morgan = require('morgan')
-// const multer = require('multer');
-// const upload = multer({dest: 'uploads/'});
-
-// const host = req.host;
-// const filePath = req.protocol + "://" + host + '/' + req.file.path;
-
-// const storage = multer.diskStorage({
-//   destination: function(req, file, callback) {
-//     callback(null, '/src/my-images');
-//   },
-//   filename: function (req, file, callback) {
-//     callback(null, file.fieldname);
-//   }
-// });
+const postRoutes = require('./routes/posts')
+const feedRoutes = require('./routes/feed')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -55,7 +41,8 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-app.use('/todos', todoRoutes)
+app.use('/post', postRoutes)
+app.use('/feed', feedRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
