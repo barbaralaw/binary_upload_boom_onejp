@@ -17,20 +17,20 @@
 
     <h1>Posts</h1>
     <ul>
-    <% todos.forEach( el => { %>
+    <% post.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span><%= el.post %></span>
                 <p><%= el.postBody %></p>
-                <span class='del'> Delete </span>
+                <button class='del'> Delete </button>
                 <img src="<%= el.image %>" alt="">
             </li>
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    
 
-    <form action="/todos/createTodo" enctype="multipart/form-data" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+    <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
+        <input type="text" placeholder="Enter Post Title" name='post'>
         <input type="text" placeholder="Body of Post" name='postBody'>
         <input type="submit">
         <input type="file" class="form-control" id="imageUpload" name="file">
