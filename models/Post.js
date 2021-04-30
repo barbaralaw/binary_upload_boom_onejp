@@ -9,12 +9,17 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-  // ,
-  // completed: {
-  //   type: Boolean,
-  //   required: true,
-  // }
   ,
+  likes: {
+    type: Number,
+    required: false,
+    default:0
+  },
+  dislikes: {
+    type: Number,
+    required: false,
+    default:0
+  },
   userId: {
     type: String,
     required: true
