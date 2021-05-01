@@ -14,6 +14,6 @@ router.post('/createPost',upload.single("file"), postsController.createPost)
 
 // router.put('/markIncomplete', postsController.markIncomplete)
 
-router.delete('/deletePost', postsController.deletePost)
+router.delete('/:id', postsController.deletePost)
 
 module.exports = router

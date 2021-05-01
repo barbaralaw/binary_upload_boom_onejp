@@ -16,7 +16,7 @@
         <h3 class="col-3">Dislikes: <%= post.dislikes %></h3>
         <%if(post.userId == user.id){ %>
         <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
+          action="/post/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >

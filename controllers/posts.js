@@ -43,14 +43,27 @@ module.exports = {
     //         console.log(err)
     //     }
     // },
-    deletePost: async (req, res)=>{
-        // console.log(req.body.postIdFromJSFile)
-        try{
-            await Post.findOneAndDelete({_id:req.body.postIdFromJSFile})
-            console.log('Deleted Todo')
-            res.json('Deleted It')
-        }catch(err){
-            console.log(err)
+    // deletePost: async (req, res)=>{
+    //     // console.log(req.body.postIdFromJSFile)
+    //     try{
+    //         await Post.findOneAndDelete({_id:req.body.postIdFromJSFile})
+    //         console.log('Deleted Todo')
+    //         res.json('Deleted It')
+    //     }catch(err){
+    //         console.log(err)
+    //     }
+    // }
+
+    deletePost: async (req, res) => {
+        try {
+          // Find post by id
+          let post = await Post.findById( req.params.id );
+          // Delete post from db
+          await Post.remove({ _id: req.params.id });
+          console.log("Deleted Post");
+          res.redirect("/feed");
+        } catch (err) {
+          res.redirect("/feed");
         }
-    }
+      },
 }    

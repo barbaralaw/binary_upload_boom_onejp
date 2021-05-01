@@ -16,7 +16,7 @@ async function deletePost(){
     const postId = this.parentNode.dataset.id
     console.log(postId)
     try{
-        const response = await fetch('post/deletePost', {
+        const response = await fetch('postPage/deletePost', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
