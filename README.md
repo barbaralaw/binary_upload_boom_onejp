@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A Simple Socila Media application, built using the MVC Architecture, we have also implemented "local authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
@@ -19,6 +19,10 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 - It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
 
 ---
+
+# Optimizations
+
+- 
 
 # Packages/Dependencies used 
 
