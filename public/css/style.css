@@ -1,5 +1,5 @@
 h1{
-    color: red;
+    color: #123554;
 }
 .completed{
     text-decoration: line-through;
@@ -13,7 +13,7 @@ header{
 }
 h2 {
     color: black;
-    
+
 }
 span{
     color: rgba(37,112,176,255)
@@ -29,7 +29,15 @@ a:link {
   }
 
 .card {
+  padding: 1rem;
     height: 30vh;
     width: 45vw;
 }
 
+.btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+.mt-7 {
+  margin-top: 7rem;
+}
