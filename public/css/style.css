@@ -18,3 +18,18 @@ h2 {
 span{
     color: rgba(37,112,176,255)
 }
+
+.newsImg {
+    height: auto;
+    width: 20vw;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+.card {
+    height: 30vh;
+    width: 45vw;
+}
+
