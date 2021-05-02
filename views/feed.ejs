@@ -1,4 +1,10 @@
 <%- include('partials/header') -%>
+<span>Only News</span>
+
+<% for(var i=0; i<5; i++) {%>
+<div class="news card">
+</div>
+<% } %>
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
@@ -16,3 +22,5 @@
     </div>
   </div>
   <%- include('partials/footer') -%>
+
+  <script src="js/webAPI.js"></script>
