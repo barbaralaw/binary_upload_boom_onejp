@@ -21,13 +21,22 @@
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span><%= el.post %></span>
                 <p><%= el.postBody %></p>
-                <button class='del' > Delete </button>
+                <button class='del'> Delete </button>
                 <img src="<%= el.image %>" alt="">
             </li>
     <% }) %>    
     </ul>
 
-    
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
 
     <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
         <input type="text" placeholder="Enter Post Title" name='post'>
