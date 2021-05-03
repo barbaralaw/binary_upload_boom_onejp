@@ -8,5 +8,9 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    } 
+    },
+    
+    deletePostPage: async (req, res) => {
+
+    }
 }

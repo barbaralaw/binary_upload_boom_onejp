@@ -18,11 +18,17 @@
     <h1>Posts</h1>
     <ul>
     <% post.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span><%= el.post %></span>
-                <p><%= el.postBody %></p>
-                <button class='del'> Delete </button>
-                <img src="<%= el.image %>" alt="">
+        <li class='todoItem' data-id='<%=el._id%>'>
+            <span><%= el.post %></span>
+            <p><%= el.postBody %></p>
+            <form
+            action="/post/<%= el._id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+            >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+            <img src="<%= el.image %>" alt="">
             </li>
     <% }) %>    
     </ul>
