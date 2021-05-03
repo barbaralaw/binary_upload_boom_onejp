@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple Socila Media application, built using the MVC Architecture, we have also implemented "local authorization" so folx can sign up, customize & personalize the app 
+A Simple Social Media application built using the MVC Architecture, we have also implemented "local authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
