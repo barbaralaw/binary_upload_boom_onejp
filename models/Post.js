@@ -7,7 +7,7 @@ const PostSchema = new mongoose.Schema({
   },
   postBody:{
     type: String,
-    required: true
+    required: true,
   }
   ,
   likes: {
@@ -22,12 +22,16 @@ const PostSchema = new mongoose.Schema({
   },
   userId: {
     type: String,
-    required: true
+    required: true,
   },
   image: {
     type: String,
-    require: true
-  }
+    require: true,
+  },
+  cloudinaryId: {
+    type: String,
+    require: true,
+  },
 })
 
 module.exports = mongoose.model('Post', PostSchema)
