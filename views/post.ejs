@@ -5,15 +5,24 @@
       <h2><%= post.post %></h2>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between">
+        
         <form
-          class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
+          action="/postPage/likePost/<%= post.id %>?_method=PUT"
           method="POST"
+          class="col-3"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn btn-primary fas fa-thumbs-up" type="submit"></button>
         </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
-        <h3 class="col-3">Dislikes: <%= post.dislikes %></h3>
+        <h3 class="col-3"><%= post.likes %></h3>
+        
+        <form
+          action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
+        </form>
+        <h3 class="col-3"><%= post.dislikes %></h3>
         <%if(post.userId == user.id){ %>
         <form
           action="/post/<%= post.id %>?_method=DELETE"
