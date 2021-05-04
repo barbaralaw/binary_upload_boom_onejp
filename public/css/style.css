@@ -1,5 +1,5 @@
-
-h1{
+h1,
+h2 {
     color: #123554;
 }
 
@@ -7,16 +7,15 @@ h1{
     text-decoration: line-through;
     color: gray;
 }
+
 .not{
     text-decoration: underline;
 }
+
 header{
     margin-top: 2%
 }
-h2 {
-    color: black;
 
-}
 span{
     color: rgba(37,112,176,255);
 }
@@ -27,6 +26,11 @@ a:link {
   }
 
 
+.card {
+  padding: 1rem;
+  min-height: 30vh;
+}
+
 .btn {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -36,6 +40,45 @@ a:link {
   margin-top: 7rem;
 }
 
+
+.inline {
+  display: inline-block;
+}
+
+.pcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.pcontainer {
+  list-style-type: none;
+}
+.pcontainer .card {
+  display: flex;
+  justify-content: space-between;
+}
+.pcontainer .todoItem {
+
+}
+.row.ret {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#imageUpload[type='file'] {
+  display: none
+}
+
+#uploadPreview {
+  max-width: 8rem;
+  max-height: 6rem;
+  display: block;
+  margin-left: 2rem;
+}
+
+#post input[type='submit'] {
+  display: block;
+}
 
 #footerIMG{
   display: flex;
