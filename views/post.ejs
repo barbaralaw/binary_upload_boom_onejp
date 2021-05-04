@@ -1,29 +1,50 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row justify-content-center mt-5">
-    <div class="col-sm-6">
-      <h2><%= post.post %></h2>
-      <img class="img-fluid" src="../<%= post.image%>" />
-      <div class="row justify-content-between">
-        <form
-          class="col-1"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
+    <div class="col-sm-6 d-flex flex-column">
+      <h2 class="mb-3"><%= post.post %></h2>
+      <a class="test-popup-link" href="<%= post.image%>">
+        <img class="img-fluid shadow" src="<%= post.image%>">
+      </a>
+      
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+          <form
+          action="/postPage/likePost/<%= post.id %>?_method=PUT"
           method="POST"
+          class="col"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= post.likes %></h3>
-        <h3 class="col-3">Dislikes: <%= post.dislikes %></h3>
+            <button class="btn btn-primary fas fa-thumbs-up" type="submit"></button>
+          </form>
+          <h3 class="mx-1 mb-1"><%= post.likes %></h3>
+        </div>
+        
+        
+        
         <%if(post.userId == user.id){ %>
-        <form
-          action="/post/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
+          <form
+            action="/post/<%= post.id %>?_method=DELETE"
+            method="POST"
+            class="col text-center"
+          >
+            <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          </form>
         <%}%>
+        
+
+        <div class="d-flex align-items-center">
+          <form
+          action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
+          method="POST"
+          class="col"
+          >
+            <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
+          </form>
+          <h3 class="mx-1 mb-1"><%= post.dislikes %></h3>
+        </div>
+        
       </div>
+
     </div>
     <div class="col-sm-3 mt-5">
       <p><%= post.postBody %></p>
@@ -34,4 +55,8 @@
     </div>
   </div>
 </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../magnific-popup/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="../magnific-popup/magnific.js"></script>
 <%- include('partials/footer') -%>
