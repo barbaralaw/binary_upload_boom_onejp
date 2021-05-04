@@ -7,13 +7,17 @@ async function fetchNews() {
     let i = 5;
     [...document.getElementsByClassName("news")].forEach((post, i) => {
       post.innerHTML = ` 
-        <a href="${data.articles[i].url}">
-            <h3>${data.articles[i].title}</h3>
-            <p>${data.articles[i].description}</p>        
-            <img class='newsImg' src='${data.articles[i].urlToImage}'>
+        <a target="_blank" href="${data.articles[i].url}">
+                <img class="card-img" src='${data.articles[i].urlToImage}'>
+                <div class="card-img-overlay">
+                  <h3 class="card-title">${data.articles[i].title}</h3>
+ 
+              </div>
         </a>
       `;
     });
   }
   
   fetchNews()
+
+  // <p class="card-text">${data.articles[i].description}</p> 
