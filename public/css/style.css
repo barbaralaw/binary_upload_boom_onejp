@@ -1,6 +1,8 @@
+
 h1{
     color: #123554;
 }
+
 .completed{
     text-decoration: line-through;
     color: gray;
@@ -33,6 +35,30 @@ a:link {
 .mt-7 {
   margin-top: 7rem;
 }
+
+
+#footerIMG{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80vw;
+  height: auto;
+}
+
+ul {
+  margin-top: 1rem;
+  display:flex;
+  justify-content: space-between;
+  font-size: 2vw;
+  list-style: none;
+
+}
+
+/* .githubContainer ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
 
 /* Card-Body */
 .card-body {
@@ -129,4 +155,3 @@ a:link {
 
 
 } 
-
