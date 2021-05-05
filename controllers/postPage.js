@@ -11,30 +11,30 @@ module.exports = {
     },
     likePost:  async (req, res) => {
         try {
-          await Post.findOneAndUpdate(
-            { _id: req.params.id },
-            {
-              $inc: { likes: 1 },
-            }
-          );
-          console.log("Likes +1");
-          res.redirect(`/postPage/${req.params.id}`);
+            await Post.findOneAndUpdate(
+                { _id: req.params.id },
+                {
+                    $inc: { likes: 1 },
+                }
+            );
+            console.log("Likes +1");
+            res.redirect(`/postPage/${req.params.id}`);
         } catch (err) {
-          console.log(err);
+            console.log(err);
         }
-      },
+    },
     dislikePost:  async (req, res) => {
         try {
-          await Post.findOneAndUpdate(
-            { _id: req.params.id },
-            {
-              $inc: { dislikes: 1 },
-            }
-          );
-          console.log("Likes +1");
-          res.redirect(`/postPage/${req.params.id}`);
+            await Post.findOneAndUpdate(
+                { _id: req.params.id },
+                {
+                    $inc: { dislikes: 1 },
+                }
+            );
+            console.log("dislikes +1");
+            res.redirect(`/postPage/${req.params.id}`);
         } catch (err) {
-          console.log(err);
+            console.log(err);
         }
-      }
+    }
 }

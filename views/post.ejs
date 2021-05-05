@@ -4,10 +4,10 @@
     <div class="col-sm-6 d-flex flex-column">
       <h2 class="mb-3"><%= post.post %></h2>
       <a class="test-popup-link" href="<%= post.image%>">
-        <img class="img-fluid shadow" src="<%= post.image%>">
+        <img class="img-fluid shadow w-100" src="<%= post.image%>">
       </a>
       
-      <div class="d-flex">
+      <div class="d-flex justify-content-between">
         <div class="d-flex align-items-center">
           <form
           action="/postPage/likePost/<%= post.id %>?_method=PUT"
