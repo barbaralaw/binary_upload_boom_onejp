@@ -1,4 +1,13 @@
 let offset = 0
+
+document.getElementById('seeMore').addEventListener('click', seeMore)
+
+
+function seeMore(){
+  offset += 4
+  fetchNews(offset)
+}
+
 async function fetchNews(offset) {
     const res = await fetch('http://localhost:8000/api/getNews')
     const {articles} = await res.json();
