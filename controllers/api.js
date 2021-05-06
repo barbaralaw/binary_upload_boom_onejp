@@ -7,7 +7,7 @@ module.exports = {
         try{
             const url = `https://newsapi.org/v2/everything?sources=bbc-news&pageSize=100&apiKey=${process.env.WEBAPIKEY}`
             const {data:{articles}} = await axios.get(url)
-            console.log(articles)
+            
             res.json({articles})
         }catch(err){
             console.log(err)
