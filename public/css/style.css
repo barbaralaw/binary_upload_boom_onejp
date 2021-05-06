@@ -91,7 +91,7 @@ ul.pcontainer {
 ul {
   margin-top: 1rem;
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 2vw;
   list-style: none;
 

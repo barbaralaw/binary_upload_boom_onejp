@@ -9,9 +9,9 @@ function seeMore(){
 }
 
 async function fetchNews(offset) {
-    const res = await fetch('http://localhost:8000/api/getNews')
+  try {
+        const res = await fetch('http://localhost:8000/api/getNews')
     const {articles} = await res.json();
-    console.log(articles);
     [...document.getElementsByClassName("news")].forEach((post, i) => {
       post.innerHTML = ` 
         <a target="_blank" href="${articles[i+offset].url}">
@@ -23,6 +23,10 @@ async function fetchNews(offset) {
         </a>
       `;
     });
+  } catch (error) {
+    console.log(error)
+  }
+
   }
   
   fetchNews(offset)
