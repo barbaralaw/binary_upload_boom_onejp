@@ -12,6 +12,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/posts')
 const feedRoutes = require('./routes/feed')
+const apiRoutes = require('./routes/api')
 const postPageRoutes = require('./routes/postPage')
 
 //Require .env file in config folder
@@ -60,6 +61,7 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
+app.use('/api', apiRoutes)
 app.use('/postPage', postPageRoutes)
  
 app.listen(process.env.PORT, ()=>{
