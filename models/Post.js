@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const {ObjectId} = mongoose.Schema.Types
 
 const PostSchema = new mongoose.Schema({
   post: {
@@ -10,16 +11,11 @@ const PostSchema = new mongoose.Schema({
     required: true,
   }
   ,
-  likes: {
-    type: Number,
-    required: false,
-    default:0
-  },
-  dislikes: {
-    type: Number,
-    required: false,
-    default:0
-  },
+  likes:
+    [{type: ObjectId, ref:"User"}]  
+  ,
+  dislikes: [{type: ObjectId, ref:"User"}]  
+  ,
   userId: {
     type: String,
     required: true,

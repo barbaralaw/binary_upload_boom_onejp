@@ -5,7 +5,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/:id", ensureAuth, postPageController.getPostPage);
 
-router.put("/likePost/:id", postPageController.likePost)
+router.put("/likePost/:id", ensureAuth, postPageController.likePost)
 
 router.put("/dislikePost/:id", postPageController.dislikePost)
 
