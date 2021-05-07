@@ -1,10 +1,15 @@
 let offset = 0
 
 document.getElementById('seeMore').addEventListener('click', seeMore)
+document.getElementById('goBack').addEventListener('click', goBack)
 
 
 function seeMore(){
   offset += 4
+  fetchNews(offset)
+}
+function goBack(){
+  offset -= 4
   fetchNews(offset)
 }
 
