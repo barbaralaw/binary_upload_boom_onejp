@@ -17,6 +17,13 @@ module.exports = {
     console.log(req.file);
 
     const fileErrors = [];
+    if(!req.file || !req.body.post || !req.body.postBody){
+      if(!req.file) fileErrors.push({ msg: "Please select an image before adding a post" })
+      if(!req.body.post) fileErrors.push({ msg: "Please enter a post title" })
+      if(!req.body.postBody) fileErrors.push({ msg: "Please enter post body" })
+      req.flash("errors", fileErrors);
+      return res.redirect("/login");
+    }
     if (req.file.size > 1024 * 1024 * 3)
       fileErrors.push({ msg: "Uploaded file is larger than 3 MB" });
 

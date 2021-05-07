@@ -32,6 +32,19 @@
       <input type="submit" class="btn btn-primary" value="Add Post">
     </form>
 
+    <div class="container-fluid">
+      <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+      <% } %>
+      <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>
+      <% } %>
+    </div>
+
     <h1>Posts</h1>
     <ul class="pcontainer">
     <% post.reverse().forEach( el => { %>
@@ -52,17 +65,6 @@
 
     <% }) %>
     </ul>
-
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>
-    <% } %>
 
     <div class="row ret justify-content-center mt-5">
         <a class="btn btn-primary" href="/feed">Return to Feed</a>
