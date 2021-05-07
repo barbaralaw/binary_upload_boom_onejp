@@ -101,7 +101,7 @@ ul {
 /* feed news buttons */
 .btnContainer{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 #seeMore, #goBack{
 width: 30vh;
