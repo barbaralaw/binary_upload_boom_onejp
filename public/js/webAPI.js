@@ -10,7 +10,7 @@ function seeMore(){
 
 async function fetchNews(offset) {
   try {
-        const res = await fetch('http://localhost:8000/api/getNews')
+        const res = await fetch('https://onlyfriendss.herokuapp.com/api/getNews')
     const {articles} = await res.json();
     [...document.getElementsByClassName("news")].forEach((post, i) => {
       post.innerHTML = ` 
