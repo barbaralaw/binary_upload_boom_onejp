@@ -80,11 +80,12 @@ ul.pcontainer {
   display: block;
 }
 
+/* footer styling */
 #footerIMG{
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 80vw;
+  width: 69vw;
   height: auto;
 }
 
@@ -97,11 +98,14 @@ ul {
 
 }
 
-/* .githubContainer ul{
+/* feed news buttons */
+.btnContainer{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
+  justify-content: space-evenly;
+}
+#seeMore, #goBack{
+width: 30vh;
+}
 
 /* Card-Body */
 .card-body {
