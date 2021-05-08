@@ -65,9 +65,7 @@ ul.pcontainer {
   display: flex;
   justify-content: space-between;
 }
-.pcontainer .todoItem {
 
-}
 .row.ret {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -88,7 +86,9 @@ ul.pcontainer {
   display: block;
 }
 
-/* footer styling */
+
+
+/* footer styling =========================================*/
 #footerIMG{
   display: flex;
   justify-content: center;
@@ -132,7 +132,7 @@ width: 30vh;
   margin-bottom: 4rem;
 }
 
-/* News Card Layout */
+/* News Card Layout =========================================*/
 
 #newsContainer .card {
   overflow: hidden;
@@ -160,9 +160,9 @@ width: 30vh;
 }
 
 
-/* Feed Cards Layout */
+/* Feed Cards Layout =========================================*/
 
-#feedContainer .card {
+#post, #feedContainer .card {
   border: 1px solid #cccccc;
   border-radius: 5%;
   box-shadow: 2px 4px rgba(37,112,176,0.15);
@@ -192,6 +192,20 @@ width: 30vh;
 #feedContainer .btn {
   margin-top: 0.15rem;
   margin-bottom: 0.15rem;
+}
+
+
+/* profile page styling ====================================*/
+
+/* profile upload form */
+
+#post {
+  border-radius: 2%;
+  margin-bottom: 3rem;
+}
+
+.form-control {
+  margin: 0.5rem 0rem;
 }
 
 /* Media Query for News container on Tablet */
