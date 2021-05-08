@@ -35,14 +35,14 @@
         <div class="col-9">
           <input class="form-control" type="text" placeholder="Enter Post Title" name='post'>
 
-          <textarea class="form-control" placeholder="Enter your Post description (300 characters max.)" name="postBody" id="floatingTextarea" maxlength="300"></textarea>
+          <textarea class="form-control" placeholder="Enter your Post description (300 characters max.)" id="floatingTextarea" maxlength="300"></textarea>
 
           <input type="submit" class="btn btn-primary float-end" value="Add Post">
         </div>
 
       </form>
 
-      
+
 
 
 
@@ -60,25 +60,35 @@
     </div>
 
     <h2>Your Posts</h2>
-    <ul class="pcontainer">
-    <% post.reverse().forEach( el => { %>
-      <li class="card col-md-4">
-        <div class='todoItem' data-id='<%=el._id%>'>
-            <span><%= el.post %></span>
-            <p><%= el.postBody %></p>
-            <form
-            action="/post/<%= el._id %>?_method=DELETE"
-            method="POST"
-            class="col-3"
-            >
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-            </form>
-            <img src="<%= el.image %>" class="img-fluid" alt="<%= el.post %>">
-          </li>
-      </div>
 
-    <% }) %>
-    </ul>
+    <div class="container" id="feedContainer">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <% post.reverse().forEach( el => { %>
+          <div class="col-sm-12 mb-5">
+            <div class="card mx-auto">
+              <a href="/postPage/<%= el._id %>">
+                <img class="card-img-top" src="<%= el.image %>" alt="<%= el.post %>">
+              </a>
+              <div class="card-body">
+                <!-- Like Button -->
+                <button class="btn btn-primary fa fa-heart" type="submit"></button>
+                <!-- Comment Button -->
+                <button class="btn btn-primary fa fa-comment" type="submit"></button>
+                <!-- Share Button -->
+                <button class="btn btn-primary fas fa-paper-plane" type="submit"></button>
+                <!-- Save or Bookmark Button -->
+                <button class="btn btn-primary fas fa-bookmark float-end" type="submit"></button>
+
+                <h5 class="card-title">
+                  <%= el.post %>
+                </h5>
+
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
   </div>
 
 
@@ -86,7 +96,7 @@
         <a class="btn btn-primary" href="/feed">Return to Feed</a>
       </div>
 
-  
+
     <script src="js/main.js"></script>
     <script src="js/postPage.js"></script>
     <%- include('partials/footer') -%>
