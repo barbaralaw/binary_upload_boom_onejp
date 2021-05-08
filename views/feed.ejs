@@ -24,7 +24,7 @@
 <!-- Post Feed Container -->
   <div class="container" id="feedContainer">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <% for(var i=0; i<posts.length; i++) {%>
+      <% for(var i=posts.length-1; i>=0; i--) {%>
         <div class="col-sm-12 mb-5">
           <div class="card mx-auto">
             <a href="/postPage/<%= posts[i]._id%>">
@@ -48,7 +48,7 @@
               </p> -->
 
             </div>
-          </div>       
+          </div>
         </div>
         <% } %>
     </div>
