@@ -122,7 +122,8 @@ width: 30vh;
 
 /* Card-Body */
 .card-body {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
+  padding-bottom: 0;
 }
 
 /* Container Spacing */
@@ -165,6 +166,7 @@ width: 30vh;
   border: 1px solid #cccccc;
   border-radius: 5%;
   box-shadow: 2px 4px rgba(37,112,176,0.15);
+  padding: 0.5rem;
 }
 
 #feedContainer .card-img-top {
@@ -178,14 +180,14 @@ width: 30vh;
 #feedContainer .card-title {
   font-size: 1.75rem;
   color: #1d1d1d;
-  border-bottom: 1px solid rgba(37,112,176,255);
-
+  border-top: 1px solid rgba(37,112,176,255);
+  margin-top: 0.6rem;
 }
 
-#feedContainer .card-text {
+/* #feedContainer .card-text {
   font-size: 1.15rem;
   color: #646464;
-}
+} */
 
 #feedContainer .btn {
   margin-top: 0.15rem;
