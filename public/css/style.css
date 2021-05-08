@@ -3,6 +3,13 @@ h2 {
     color: #123554;
 }
 
+/* button color */
+.btn {
+  background-color: rgba(37,112,176,255);
+  border: 1px;
+}
+
+
 .completed{
     text-decoration: line-through;
     color: gray;
@@ -107,6 +114,11 @@ ul {
 width: 30vh;
 }
 
+/* navbar */
+.btn-group {
+  margin-left: 3rem;
+}
+
 /* Card-Body */
 .card-body {
   padding: 0.5rem 1rem;
@@ -185,6 +197,7 @@ width: 30vh;
   #newsContainer  .card .card-title {
     font-size: 0.9rem;
   }
+
 } 
 
 
