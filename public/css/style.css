@@ -4,10 +4,11 @@ h2 {
 }
 
 /* button color */
-.btn {
+/* .btn {
   background-color: rgba(37,112,176,255);
   border: 1px;
-}
+  color: white
+} */
 
 
 .completed{
