@@ -210,8 +210,24 @@ width: 30vh;
 
   /* Sets a max width to the card so it doesnt take half the screen on desktop */
   #feedContainer .card {
-    width: 420px; 
+    width: 19.25rem; 
+  }
+
+
+}
+
+/* Media Query for feed container card  on Large Desktops */
+@media only screen and (min-width: 1400px) {  
+  /* Makes font size more consistent on bigger screens */
+  #newsContainer  .card .card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Sets a max width to the card so it doesnt take half the screen on desktop */
+  #feedContainer .card {
+    width: 26.25rem; 
   }
 
 
 } 
+
