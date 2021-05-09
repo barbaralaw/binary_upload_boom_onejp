@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const favicon = require('serve-favicon')
 const dotenv = require('dotenv')
 const passport = require('passport')
 const session = require('express-session')
@@ -29,6 +30,7 @@ app.set('view engine', 'ejs')
 
 // Static Folder
 app.use(express.static('public'))
+app.use(favicon(__dirname + '/public/imgs/favicon.ico'))
 
 // Body Parsing
 app.use(express.urlencoded({ extended: true }))
@@ -51,19 +53,19 @@ app.use(
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
   )
-  
+
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
-  
+
 app.use('/', mainRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 app.use('/api', apiRoutes)
 app.use('/postPage', postPageRoutes)
- 
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
-})    
+})
