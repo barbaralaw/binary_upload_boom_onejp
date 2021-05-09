@@ -7,7 +7,7 @@
       <a class="test-popup-link" href="<%= post.image%>">
         <img class="img-fluid shadow w-100" src="<%= post.image%>">
       </a>
-      
+
       <div class="d-flex justify-content-between">
         <div class="d-flex align-items-center">
           <form
@@ -19,9 +19,9 @@
           </form>
           <h3 class="mx-1 mb-1"><%= post.likes.length %></h3>
         </div>
-        
-        
-        
+
+
+
         <%if(post.userId == user.id){ %>
           <form
             action="/post/<%= post.id %>?_method=DELETE"
@@ -31,7 +31,7 @@
             <button class="btn btn-primary fa fa-trash" type="submit"></button>
           </form>
         <%}%>
-        
+
 
         <div class="d-flex align-items-center">
           <form
@@ -43,14 +43,18 @@
           </form>
           <h3 class="mx-1 mb-1"><%= post.dislikes.length %></h3>
         </div>
-        
+
       </div>
 
     </div>
     <div class="col-sm-3 mt-5">
       <p><%= post.postBody %></p>
     </div>
-    <div class="col-sm-6 mt-5">
+
+  </div>
+
+  <div class="container justify-content-center">
+    <div class="text-center">
       <a class="btn btn-primary" href="/post">Return to Profile</a>
       <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div>
