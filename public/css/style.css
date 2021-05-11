@@ -171,7 +171,8 @@ width: 30vh;
 
 #feedContainer .card-img-top {
   width: 100%;
-  object-fit: contain;
+  height: 400px;
+  object-fit: cover;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
 }
@@ -244,7 +245,7 @@ width: 30vh;
   #feedContainer .card {
     width: 26.25rem; 
   }
-
-
 } 
+
+/* Images on the feeds page */
 
