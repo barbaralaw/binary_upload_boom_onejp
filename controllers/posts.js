@@ -106,4 +106,12 @@ module.exports = {
       console.log(err);
     }
   },
+
+  getPolicy: async (req, res) => {
+    try {
+      res.render("policy.ejs");
+    } catch (err) {
+      console.log(err)
+    }
+  },
 };

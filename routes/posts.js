@@ -14,4 +14,6 @@ router.post('/createPost',upload.single("file"), postsController.createPost)
 
 router.delete('/:id', postsController.deletePost)
 
+router.get('/policy', postsController.getPolicy)
+
 module.exports = router
