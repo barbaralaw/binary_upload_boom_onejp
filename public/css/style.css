@@ -160,9 +160,9 @@ width: 30vh;
 }
 
 
-/* Feed Cards Layout =========================================*/
+/* Card Layout =========================================*/
 
-#post, #feedContainer .card {
+#postPageCard, #post, #feedContainer .card {
   border: 1px solid #cccccc;
   border-radius: 5%;
   box-shadow: 2px 4px rgba(37,112,176,0.15);
@@ -177,12 +177,28 @@ width: 30vh;
   border-top-right-radius: 5%;
 }
 
+#postCard-img  {
+  object-fit: cover;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
 
-#feedContainer .card-title {
+
+#postPageCard .card-title, #feedContainer .card-title {
   font-size: 1.75rem;
   color: #1d1d1d;
   border-top: 1px solid rgba(37,112,176,255);
   margin-top: 0.6rem;
+}
+
+#postPageCard .card-title {
+  border-top: none;
+  border-bottom: 1px solid rgba(37,112,176,255);
+}
+
+#postPageCard .card-text {
+  font-size: 1.15rem;
+  color: #646464;
 }
 
 /* #feedContainer .card-text {

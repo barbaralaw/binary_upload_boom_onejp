@@ -1,57 +1,84 @@
 <%- include('partials/header') -%>
 <%- include('partials/nav') -%>
 <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-sm-6 d-flex flex-column">
-      <h2 class="mb-3"><%= post.post %></h2>
-      <a class="test-popup-link" href="<%= post.image%>">
-        <img class="img-fluid shadow w-100" src="<%= post.image%>">
-      </a>
+  
+      <!-- BOOTSTRAP CARD -->
+      <div class="card m-0 p-0 mx-auto my-auto" style="max-width: 1024px;"
+      id="postPageCard">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <a class="test-popup-link" href="<%= post.image%>">
+              <img class="img-fluid shadow w-100" src="<%= post.image%>" id="postCard-img">
+            </a>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <h5 class="card-title">
+                <!-- POST TITLE -->
+                <%= post.post %>
+              </h5>
+              <p class="card-text">      
+                <!-- POST DESCRIPTION -->
+                <%= post.postBody %>
+              </p>
 
-      <div class="d-flex justify-content-between">
-        <div class="d-flex align-items-center">
-          <form
-          action="/postPage/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-          class="col"
-        >
-            <button class="btn btn-primary fas fa-thumbs-up" type="submit"></button>
-          </form>
-          <h3 class="mx-1 mb-1"><%= post.likes.length %></h3>
-        </div>
-
-
-
-        <%if(post.userId == user.id){ %>
-          <form
-            action="/post/<%= post.id %>?_method=DELETE"
+          <div class="row g-0">
+            <!-- LIKE -->
+          <div class="col-4">
+            <form
+            action="/postPage/likePost/<%= post.id %>?_method=PUT"
             method="POST"
-            class="col text-center"
-          >
-            <button class="btn btn-primary fa fa-trash" type="submit"></button>
-          </form>
-        <%}%>
+            class="text-center"
+            >
+              <button class="btn btn-primary fa fa-heart" type="submit"></button>
+              <h3><%= post.likes.length %></h3>
+            </form>
+            
+          </div>
+
+          <div class="col-4">
+            <!-- DELETE  -->
+            <%if(post.userId == user.id){ %>
+              <form
+                action="/post/<%= post.id %>?_method=DELETE"
+                method="POST"
+                class="text-center"
+              >
+                <button class="btn btn-primary fa fa-trash" type="submit"></button>
+              </form>
+            <%}%>
+          </div>
+
+          <div class="col-4">
+            <!-- DISLIKE -->
+            <form
+            action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
+            method="POST"
+            class="text-center"
+            >
+              <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
+              <h3 class="mx-1 mb-1"><%= post.dislikes.length %></h3>
+            </form>
+            
+          </div>
+          
+
+          </div>
+
+          <div class="row g-0">
+            <div class="col-12 text-center">
+              <textarea class="form-control" placeholder="Leave a comment..." id="floatingTextarea" maxlength="300" name='postBody'></textarea>
+            </div>
+
+            <button class="btn btn-primary fa fa-paper-plane mt-0" type="submit"></button>
 
 
-        <div class="d-flex align-items-center">
-          <form
-          action="/postPage/dislikePost/<%= post.id %>?_method=PUT"
-          method="POST"
-          class="col"
-          >
-            <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
-          </form>
-          <h3 class="mx-1 mb-1"><%= post.dislikes.length %></h3>
+          </div>
+          </div>
+          </div>
+        </div>
         </div>
 
-      </div>
-
-    </div>
-    <div class="col-sm-3 mt-5">
-      <p><%= post.postBody %></p>
-    </div>
-
-  </div>
 
   <div class="container justify-content-center">
     <div class="text-center">
