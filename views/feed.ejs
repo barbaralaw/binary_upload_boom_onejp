@@ -32,9 +32,9 @@
             </a>
             <div class="card-body">
               <!-- Like Button -->
-              <button class="btn btn-primary fa fa-heart" type="submit"></button>
+              <button class="<%= posts[i].likes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn  fa fa-heart" type="submit"></button>
               <!-- Comment Button -->
-              <button class="btn btn-primary fas fa-thumbs-down" type="submit"></button>
+              <button class="<%= posts[i].dislikes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn fas fa-thumbs-down" type="submit"></button>
               <!-- Share Button -->
               <button class="btn btn-primary fas fa-comment" type="submit"></button>
               <!-- Save or Bookmark Button -->
