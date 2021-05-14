@@ -193,12 +193,18 @@ width: 30vh;
 
 #postPageCard .card-title {
   border-top: none;
-  border-bottom: 1px solid rgba(37,112,176,255);
+  /* border-bottom: 1px solid rgba(37,112,176,255); */
 }
 
 #postPageCard .card-text {
   font-size: 1.15rem;
   color: #646464;
+  padding-top: 1rem;
+}
+
+#postPageCard .card-span {
+  display: block;
+  border-bottom: 1px solid rgba(37,112,176,255);
 }
 
 /* #feedContainer .card-text {

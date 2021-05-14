@@ -1,11 +1,13 @@
 const Post = require('../models/Post')
+const User = require('../models/User')
 
 module.exports = {
     getPostPage: async (req,res)=>{
         try{
             const post = await Post.findById(req.params.id)
-            // console.log(post.likes)
-            res.render('post.ejs', {post: post, user: req.user})
+            const userN = await User.findById(post.userId)
+            // console.log(userN)
+            res.render('post.ejs', {post: post, user: req.user, creator: userN})
         }catch(err){
             console.log(err)
         }
