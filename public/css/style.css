@@ -223,6 +223,15 @@ width: 30vh;
   margin-bottom: 0.15rem;
 }
 
+#feedContainer .feedButtonGroup {
+  width: 39%;
+}
+
+@media only screen and (max-width: 1400px){
+  #feedContainer .feedButtonGroup {
+    width: 50%;
+  }
+}
 
 /* profile page styling ====================================*/
 

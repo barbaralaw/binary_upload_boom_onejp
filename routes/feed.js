@@ -7,5 +7,7 @@ const upload = multer({ dest: "public/uploads/" })
 const { storage } = require("../middleware/multer");
 
 router.get('/', ensureAuth,  feedController.getFeed)
+router.put('/like/:id', feedController.likePost)
+router.put('/dislike/:id', feedController.dislikePost)
 
 module.exports = router

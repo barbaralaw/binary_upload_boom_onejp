@@ -31,14 +31,32 @@
               <img class="card-img-top" src="<%= posts[i].image%>">
             </a>
             <div class="card-body">
-              <!-- Like Button -->
-              <button class="<%= posts[i].likes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn  fa fa-heart" type="submit"></button>
-              <!-- Comment Button -->
-              <button class="<%= posts[i].dislikes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn fas fa-thumbs-down" type="submit"></button>
-              <!-- Share Button -->
-              <button class="btn btn-primary fas fa-comment" type="submit"></button>
-              <!-- Save or Bookmark Button -->
-              <button class="btn btn-primary fas fa-bookmark float-end" type="submit"></button>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex feedButtonGroup justify-content-between">
+                  <!-- Like Button -->
+                  <form
+                  action="/feed/like/<%= posts[i]._id %>?_method=PUT"
+                  method="POST"
+                  class="text-center"
+                  >
+                    <button class="<%= posts[i].likes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn  fa fa-heart" type="submit"></button>
+                  </form>
+                  <!-- Dislike Button -->
+                  <form
+                  action="/feed/dislike/<%= posts[i]._id %>?_method=PUT"
+                  method="POST"
+                  class="text-center"
+                  >
+                    <button class="<%= posts[i].dislikes.toString().includes(user.id) ? "btn-danger" : "btn-primary" %> btn fas fa-thumbs-down" type="submit"></button>
+                  </form>
+                  <!-- Comment Button -->
+                  <button class="btn btn-primary fas fa-comment" type="submit"></button>
+                </div>
+                <div>
+                  <!-- Save or Bookmark Button -->
+                  <button class="btn btn-primary fas fa-bookmark float-end" type="submit"></button>
+                </div>
+              </div>
 
               <h5 class="card-title">
                 <%= posts[i].post %>
