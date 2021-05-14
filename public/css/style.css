@@ -12,7 +12,7 @@ h2 {
 
 #onlyNewsSpan{
   color: black;
-  font-weight: bold;
+  font-size: 2em;
 }
 
 .completed{
@@ -30,7 +30,9 @@ header{
 
 span{
     color: rgba(37,112,176,255);
+    
 }
+
 
 
 a:link {
