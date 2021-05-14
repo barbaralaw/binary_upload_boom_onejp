@@ -87,7 +87,7 @@ const User = require('../models/User')
           if (err) {
             return next(err)
           }
-          res.redirect('/post')
+          res.redirect('/feed')
         })
       })
     })
