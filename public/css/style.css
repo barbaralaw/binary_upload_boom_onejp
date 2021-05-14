@@ -286,3 +286,11 @@ width: 30vh;
 
 /* Images on the feeds page */
 
+/* li Commenting */
+#comm-font{
+  font-size: 1.5rem;
+}
+
+#comm-style{
+  padding:0;
+}

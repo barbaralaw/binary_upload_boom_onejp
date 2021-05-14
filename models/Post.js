@@ -16,6 +16,9 @@ const PostSchema = new mongoose.Schema({
   ,
   dislikes: [{type: ObjectId, ref:"User"}]  
   ,
+  comments:
+    [{type: String, ref:"User"}]
+  ,
   userId: {
     type: String,
     required: true,
