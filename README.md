@@ -1,6 +1,7 @@
 ![OnlyFriends](https://onlyfriendss.herokuapp.com/imgs/OnlyFriends.JPG)
 
 # Introduction
+([visit the LIVE site](https://onlyfriendss.herokuapp.com/))
 
 OnlyFriends is a Simple Social Media application built using JavaScript, Node.js, Express, Mongoose, and Bootstrap. It utilizes the MVC Architecture, MongoDB and MongoAtlas NoSQL database - with Cloudinary image hosting, and implements "local authorization" for user sign-up and login.
 
