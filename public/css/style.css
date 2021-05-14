@@ -10,6 +10,10 @@ h2 {
   color: white
 } */
 
+#onlyNewsSpan{
+  color: black;
+  font-weight: bold;
+}
 
 .completed{
     text-decoration: line-through;
