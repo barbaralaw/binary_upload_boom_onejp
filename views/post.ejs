@@ -71,15 +71,32 @@
   
             
               </div>
+              <!-- Add Comments -->
+              <div>
+                <h5>Comments</h5>
+                <ul class="d-flex flex-column" id="comm-style">
+                  <% for(let i=0; i<post.comments.length; i++) { %>
+                    <li id="comm-font"><%= post.comments[i] %></li>
+                  <% } %>
+                </ul>
+              </div>
               
               <div>
                 <div class="row g-0">
-                  <div class="col-12 text-center">
-                    <textarea class="form-control" placeholder="Leave a comment..." id="floatingTextarea" maxlength="300" name='postBody'></textarea>
+                  
+                  <div class="">
+                    <form
+                    action="/postPage/comment/<%= post.id %>?_method=PUT"
+                    method="POST"
+                    class="text-center"
+                    >
+                    <div class="col-12 text-center">
+                      <textarea class="form-control" placeholder="Leave a comment..." id="floatingTextarea" maxlength="300" name='commentBody'></textarea>
+                    </div>
+                    <button class="btn btn-primary fa fa-paper-plane mt-0" type="submit"></button>
+                    </form>
                   </div>
-      
-                  <button class="btn btn-primary fa fa-paper-plane mt-0" type="submit"></button>
-      
+                  
       
                 </div>
               </div>

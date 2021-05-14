@@ -123,5 +123,24 @@ module.exports = {
                 console.log(err);
             }
         }
+    },
+    comment : async(req, res) => {
+        try {
+            // console.log(req.user, req.body.commentBody)
+            await Post.findOneAndUpdate(
+                { _id: req.params.id},
+                {
+                    $push: { comments: req.user.userName + ': ' + req.body.commentBody},
+                },
+                {
+                    new: true,
+                }
+            )
+        console.log("Comment Added");
+        res.redirect(`/postPage/${req.params.id}`);
+        
+        } catch (err) {
+            console.log(err);
+        }
     }
 }
